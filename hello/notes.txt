@@ -1,0 +1,19 @@
+## printing to console
+fmt.Print() → Prints without a newline
+fmt.Println() → Prints with a newline at the end
+fmt.Printf() → Prints with formatting (like printf in C)
+
+## reading input
+fmt.Scan() → Reads user input
+fmt.Scanln(), fmt.Scanf() → More controlled input reading
+
+## string formatting
+fmt.Sptintf() -> Returns a formatted string instead of printing it
+eg :- message := fmt.Sprintf("You are %d years old", age)
+
+fmt package provides C-style formatting with verbs like:
+%v → default format (useful for any type)
+%d → integers
+%s → strings
+%t → booleans
+%f → floats
