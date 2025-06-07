@@ -1,4 +1,4 @@
-## Pointers
+# Pointers
 The * operator denotes the pointer's underlying value.
 
 ```
@@ -10,7 +10,7 @@ This is known as "dereferencing" or "indirecting".
 
 *Unlike C, Go has no pointer arithmetic.*
 
-## Structs
+# Structs
 A struct is a collection of fields
 
 Struct fields : Struct fields are accessed using a dot.
@@ -27,7 +27,7 @@ You can list just a subset of fields by using the Name: syntax. (And the order o
 
 The special prefix & returns a pointer to the struct value.
 
-## Arrays
+# Arrays
 The type [n]T is an array of n values of type T
 ```
 var a [10]int
@@ -51,3 +51,37 @@ This selects a half-open range which includes the first element, but excludes th
 Slicing does not really store any data, it only describes a section of an underlying array. Changing the elements of a slice modifies the corresponding elements of its underlying array.
 
 Other slices that share the same underlying array will see those changes.
+
+## Slice literals
+A slice literal is like an array literal without the length.
+
+This is an array literal:
+```
+[3]bool{true, true, false}
+```
+
+And this creates the same array as above, then builds a slice that references it:
+```
+[]bool{true, true, false}
+```
+
+## Slice defaults
+when slicing an array we can use default higher and lower bound insetad of mentioning the values.
+lower bound default is 0
+higher bound default is length of slices
+```
+a[0:10]
+a[:10]
+a[0:]
+a[:]
+```
+
+## Slice length and capacity
+length of slice is number of elements it contains `len(s)`
+capacity of slice is number of elements in underlying array `cap(s)`
+
+We can extend a slice's length by re-slicing it, provided it has sufficient capacity
+
+## Nil slices
+The zero value of a slice is nil.
+A nil slice has a length and capacity of 0 and has no underlying array.
